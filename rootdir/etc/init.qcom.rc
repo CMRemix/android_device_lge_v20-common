@@ -874,6 +874,9 @@ service msm_irqbalance /system/bin/msm_irqbalance -f /system/vendor/etc/msm_irqb
     group root
     disabled
 
+on charger
+    setprop persist.sys.usb.config charging
+
 service qseeproxydaemon /system/vendor/bin/qseeproxydaemon
     class late_start
     user system
