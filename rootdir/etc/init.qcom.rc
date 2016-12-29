@@ -514,6 +514,9 @@ on post-fs-data
     chown radio radio /data/misc/radio/db_check_done
     chmod 0660 /data/misc/radio/db_check_done
 
+    # Allow execute of set_baseband
+    chmod 0744 /etc/set_baseband.sh
+
     # Persist LG folders
     mkdir /persist-lg/property 0771 system radio
     mkdir /persist-lg/autosimlock 0770 system system
