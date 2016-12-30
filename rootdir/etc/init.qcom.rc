@@ -63,6 +63,11 @@ on early-boot
     write /sys/kernel/boot_adsp/boot 1
     write /sys/kernel/boot_slpi/boot 1
 
+service set_baseband /system/bin/sh /system/etc/set_baseband.sh
+    class late_start
+    user root
+    seclabel u:r:set_baseband:s0
+
 on boot
     # Create QMUX deamon socket area
     mkdir /dev/socket/qmux_radio 0770 radio radio
@@ -334,6 +339,9 @@ on boot
 
 on property:sys.boot_completed=1
     write /sys/devices/virtual/lg_rgb_led/use_patterns/setting 0
+
+on property:gsm.version.baseband=""
+    start set_baseband
 
 service conn_init /system/bin/hwaddrs
     class core
@@ -721,16 +729,6 @@ service sensors /system/bin/sensors.qcom
     user root
     group root
     disabled
-
-service set_baseband /system/bin/sh /system/etc/set_baseband.sh
-    class late_start
-    user root
-    seclabel u:r:set_baseband:s0
-    oneshot
-    disabled
-
-on property:gsm.version.baseband=""
-    start set_baseband
 
 on property:ro.use_data_netmgrd=false
     # netmgr not supported on specific target
