@@ -323,6 +323,7 @@ on boot
     chown system input /sys/bus/spi/devices/spi8.1/spi_owner
     chown system input /sys/bus/spi/devices/spi8.1/regulator_enable
     chown system input /sys/bus/spi/devices/spi8.1/wakeup_enable
+    chown system system /sys/bus/spi/devices/spi8.1/proximity_state
 
     # LEDs
     chown system system /sys/devices/virtual/lg_rgb_led/use_patterns/blink_patterns

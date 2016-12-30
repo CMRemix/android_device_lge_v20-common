@@ -1,5 +1,6 @@
 #
 # Copyright (C) 2016 The CyanogenMod Project
+# Copyright (c) 2017 LineageOS
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -146,7 +147,8 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    fingerprintd
+    fingerprintd \
+    LGPocketMode
 
 # For android_filesystem_config.h
 PRODUCT_PACKAGES += \

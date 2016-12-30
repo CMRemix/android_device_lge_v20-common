@@ -9,6 +9,7 @@
 # Fingerprint
 /system/bin/fpc_early_loader                                        u:object_r:fingerprintd_exec:s0
 /sys/devices/soc/75b7000\.spi/spi_master/spi8/spi8\.1(/.*)?         u:object_r:sysfs_devices_fingerprint:s0
+/sys/bus/spi/devices/spi8.1/proximity_state                         u:object_r:sysfs_bus_proximity:s0
 
 # FRP partition
 /dev/block/bootdevice/by-name/persistent                            u:object_r:frp_block_device:s0
