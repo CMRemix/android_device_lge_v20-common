@@ -183,7 +183,7 @@ BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy
 USE_SENSOR_MULTI_HAL := true
 
 # Use Snapdragon LLVM, if available
-# TARGET_USE_SDCLANG := true
+TARGET_USE_SDCLANG := true
 
 # Wi-Fi
 WPA_SUPPLICANT_VERSION      := VER_0_8_X
